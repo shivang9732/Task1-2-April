@@ -1,0 +1,76 @@
+
+# to check on customer_gender and based on that applied logic to give discount.
+# it will end with the total due and total disount.
+
+
+# task 2 start Shivang Shah
+
+# setting up for the user input
+customer_name = str(input("Enter your name : "))
+customer_gender = str(input("Enter your gender : "))
+purchase_amount = int(input("Enter purchase amount : "))
+
+# checking the codition for customer_gender whether male and female and setting the gretting message accordigly to make sure.
+
+if customer_gender in ['Male', 'male', 'MALE']:
+    customer_m = customer_gender
+    print("Welcome Sir ")  # if male
+    customer_f = 0  # keeping the value 0, so it will false the first confition and will go for customer_m
+
+elif customer_gender in ['Female', 'female', 'FEMALE']:
+    customer_f = customer_gender
+    print("Welcome Mam ")  # if female
+
+else:
+    print("Enter valid input !!!")
+    exit(0)  # terminating to handle the exception.
+
+# conditon for customer_f female, it will check first three conditions
+if customer_f and (purchase_amount > 40000):
+
+    total_discount = (purchase_amount * 20)/100  # 20% discount
+
+elif customer_f and (purchase_amount > 50000):
+
+    total_discount = (purchase_amount * 30)/100  # 30% discount
+
+elif customer_f and (purchase_amount > 60000):
+    total_discount = (purchase_amount * 50)/100  # 50% discount
+
+# condition for customer_m male, it will check below three conditions
+elif customer_m and (purchase_amount > 40000):
+
+    total_discount = (purchase_amount * 15)/100  # 15% discount
+
+elif customer_m and (purchase_amount > 50000):
+
+    total_discount = (purchase_amount * 25)/100  # 25% discount
+
+elif customer_m and (purchase_amount > 60000):
+    total_discount = (purchase_amount * 45)/100  # 45% discount
+
+
+else:
+    print("Discount not applied, thank you for shopping.")  # no match scenario
+    # terminating to handle the exception.
+    exit(0)
+
+print("Your total Discount is :: ", end=" ")
+print(total_discount)
+
+amount_due = purchase_amount - total_discount  # logic to find the due amount.
+
+print("Your total Due is :: ", end=" ")
+print(amount_due)
+
+print("Thanks for shopping with us " + customer_name + "!!!")
+
+# task 2 ends Shivang Shah
+
+""" functional scenario :- (1) test for both Male with value greater than 65000
+                           (2) test for female
+                           
+
+    negative scenario :-   (1) enter gender as child
+                           (2) enter value less than 40000
+                           
