@@ -1,0 +1,35 @@
+
+# student_name and student_marks are variables where user provides input.
+# input from user is to be checked between 0 to 100 else exit the program.
+# conditions to provide the grades based on student_marks entry.
+
+
+# task 2 starts Shivang Shah
+student_name = str(input('Enter Student\'s name : '))
+
+student_marks = int(input("Enter Marks : "))
+
+if student_marks > 0 and student_marks < 100:
+    print("Please find your result :: ", end=" ")
+
+else:
+    print("Invalid Input !!!!")
+    exit(0)  # exit the program
+
+if student_marks > 70:
+    print(student_name + " got A grade ")
+
+elif student_marks > 60:
+    print(student_name + " got B grade ")
+
+elif student_marks > 35:
+    print(student_name + " got C grade")
+
+else:
+    print(student_name + " got Failed LOL")
+
+# task 2 ends Shivang Shah
+
+# test cases
+# functional scenario :- regular input between 0 to 100 (recommened below 35)
+# negative scenario :- input less than 0 or grater than 100.
